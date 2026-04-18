@@ -1,0 +1,618 @@
+/* Variables CSS — Palette et réglages globaux */
+:root {
+--color-primary: #d4a373;
+    /* Nude chaud (beige caramel) */
+
+    --color-primary-dark: #b08968;
+    /* Version أغمق للـ hover */
+
+    --color-secondary: #6c584c;
+    /* Brown grisé élégant */
+
+    --color-accent: #e6ccb2;
+    /* Nude clair باش يبرز */
+
+    --color-text: #3a2e2a;
+    /* Texte dark brown موش noir */
+
+    --color-text-light: #a68a7a;
+    /* Texte secondaire soft */
+
+    --color-background: #fefae0;
+    /* Fond crème léger */
+
+    --color-background-alt: #faedcd;
+    /* Beige clair */
+
+    --color-border: #e9d8c4;
+    /* Border nude soft */
+    /* Couleur des bordures */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 1.5rem;
+    /* 24px */
+    --spacing-lg: 2rem;
+    /* 32px */
+    --spacing-xl: 3rem;
+    /* 48px */
+    --spacing-3xl: 6rem;
+    /* 96px */
+    --border-radius: 0.5rem;
+    /* Coins arrondis */
+    --transition: all 0.3s ease;
+    /* Animation par défaut */
+}
+/* Reset — supprimer les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+/* Conteneur centré */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: var(--transition);
+}
+/* Hero Section */
+.hero {
+    padding: calc(var(--spacing-3xl) + 60px) 0 var(--spacing-3xl);
+background: linear-gradient(135deg, #fdf6f0 0%, #f5e6da 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+    }
+    
+    .highlight {
+        color: var(--color-primary);
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--color-text-light);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-description {
+        font-size: 1.125rem;
+        color: var(--color-text-light);
+        margin-bottom: var(--spacing-xl);
+        line-height: 1.8;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+                border: 2px solid transparent;
+            }
+            
+            .btn-primary {
+                background-color: var(--color-primary);
+                color: white;
+            }
+            
+            .btn-primary:hover {
+                background-color: var(--color-primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            }
+            
+            .btn-secondary {
+                background-color: transparent;
+                color: var(--color-primary);
+                border-color: var(--color-primary);
+            }
+            
+            .btn-secondary:hover {
+                background-color: var(--color-primary);
+                color: white;
+            }
+                        /* Sections */
+                        .section {
+                            padding: var(--spacing-3xl) 0;
+                        }
+            
+                        .section-alt {
+                            background-color: var(--color-background-alt);
+                        }
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-secondary);
+}
+
+/* Grille des compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.skill-card {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.skill-icon {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+
+}
+/* حط الكود هنا في الاخر */
+.info-item {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.info-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+}
+
+.location {
+    background: linear-gradient(45deg, #ff7e5f, #ff3d00);
+}
+
+.email {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+.phone {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+} 
+.info-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #222;
+    /* noir soft */
+}
+
+.icon {
+    font-size: 16px;
+    padding: 9px;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* 🎨 Nude + elegant colors */
+.location {
+    background: #c2a68a;
+    /* nude beige */
+}
+
+.email {
+    background: #2f2f2f;
+    /* noir soft */
+}
+
+.phone {
+    background: #d8c3a5;
+    /* nude clair */
+}.info-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #222;
+    /* noir soft */
+}
+
+.icon {
+    font-size: 16px;
+    padding: 9px;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* 🎨 Nude + elegant colors */
+.location {
+    background: #d8c3a5;
+    /* nude beige */
+}
+
+.email {
+    background: #d8c3a5;
+    /* noir soft */
+}
+
+.phone {
+    background: #d8c3a5;
+    /* nude clair */
+}
+.cv-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #2f2f2f;
+    /* noir soft */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.cv-btn:hover {
+    background: #c2a68a;
+    /* nude */
+    color: #000;
+}
+
+.skill-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-secondary);
+}
+
+.skill-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+/* Grille des projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.project-card {
+    background: var(--color-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    transition: 0.3s(--transition);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: var(--spacing-lg);
+}
+
+.project-tags {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.tag {
+    background-color: var(--color-background-alt);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+        /* Section Contact */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+    
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+    
+        .form-group label {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+    
+        .form-group input,
+        .form-group textarea {
+            padding: 0.875rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: var(--transition);
+            }
+            
+            .form-group input:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: var(--color-primary);
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            }
+            
+            .form-message.success {
+                background-color: #dcfce7;
+                color: #15803d;
+                border: 1px solid #86efac;
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                display: block;
+            }
+            
+            .form-message.error {
+                background-color: #fee2e2;
+                color: #dc2626;
+                border: 1px solid #fca5a5;
+                padding: 1rem;
+                border-radius: var(--border-radius);
+                display: block;
+            }
+                        /* Footer */
+                        .footer {
+                            background-color: var(--color-secondary);
+                            color: white;
+                            padding: var(--spacing-xl) 0;
+                        }
+                                                .footer-content {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    gap: var(--spacing-md);
+                                                }
+                        
+                                                .social-links {
+                                                    display: flex;
+                                                    gap: var(--spacing-md);
+                                                }
+                        
+                                                .social-links a {
+                                                    color: white;
+                                                    transition: var(--transition);
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    width: 40px;
+                                                    height: 40px;
+                                                    border-radius: 50%;
+                                                    background-color: rgba(255, 255, 255, 0.1);
+                                                }
+                        
+                                                .social-links a:hover {
+                                                    background-color: var(--color-primary);
+                                                    transform: translateY(-3px);
+                                                }
+                        
+                                                .footer-text {
+                                                    color: rgba(255, 255, 255, 0.7);
+                                                    font-size: 0.875rem;
+                                                }
+                                                                                                /* Responsive — Tablettes et téléphones */
+                                                                                                @media (max-width: 768px) {
+                                                
+                                                                                                    /* Menu mobile : masqué, affiché verticalement au clic */
+                                                                                                    .nav-menu {
+                                                                                                        position: absolute;
+                                                                                                        top: 100%;
+                                                                                                        left: 0;
+                                                                                                        right: 0;
+                                                                                                        background-color: white;
+                                                                                                        flex-direction: column;
+                                                                                                        padding: var(--spacing-md);
+                                                                                                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                                                                                                        display: none;
+                                                                                                    }
+                                                
+                                                                                                    /* Le menu s'affiche quand JavaScript ajoute la classe 'active' */
+                                                                                                    .nav-menu.active {
+                                                                                                        display: flex;
+                                                                                                    }
+                                                
+                                                                                                    /* Afficher le bouton hamburger */
+                                                                                                    .nav-toggle {
+                                                                                                        display: flex;
+                                                                                                    }
+                                                
+                                                                                                    /* Réduire les tailles de texte */
+                                                                                                    .hero-title {
+                                                                                                        font-size: 2rem;
+                                                                                                    }
+                                                
+                                                                                                    .hero-subtitle {
+                                                                                                        font-size: 1.25rem;
+                                                                                                    }
+                                                
+                                                                                                    .section-title {
+                                                                                                        font-size: 2rem;
+                                                                                                    }
+                                                
+                                                                                                    /* Boutons en colonne */
+                                                                                                    .hero-buttons {
+                                                                                                        flex-direction: column;
+                                                                                                    }
+                                                
+                                                                                                    .btn {
+                                                                                                        width: 100%;
+                                                                                                        text-align: center;
+                                                                                                    }
+                                                                                                }
+                                                
+                                                                                                @media (max-width: 480px) {
+                                                                                                    .hero-title {
+                                                                                                        font-size: 1.75rem;
+                                                                                                    }
+                                                
+                                                                                                    .projects-grid {
+                                                                                                        grid-template-columns: 1fr;
+                                                                                                    }
+                                                                                                }
+                                                                                                                                                                                                /* Languages */
+                                                                                                                                                                                                .languages-grid {
+                                                                                                                                                                                                    display: grid;
+                                                                                                                                                                                                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                                                                                                                                                                                                    gap: 20px;
+                                                                                                                                                                                                }
+                                                                                                
+                                                                                                                                                                                                .language-item {
+                                                                                                                                                                                                    background: #fefae0;
+                                                                                                                                                                                                    padding: 15px 20px;
+                                                                                                                                                                                                    border-radius: 12px;
+                                                                                                                                                                                                    border: 1px solid #e9d8c4;
+                                                                                                                                                                                                }
+                                                                                                
+                                                                                                                                                                                                .language-header {
+                                                                                                                                                                                                    display: flex;
+                                                                                                                                                                                                    justify-content: space-between;
+                                                                                                                                                                                                    margin-bottom: 8px;
+                                                                                                                                                                                                    font-weight: 500;
+                                                                                                                                                                                                    color: #3a2e2a;
+                                                                                                                                                                                                }
+                                                                                                
+                                                                                                                                                                                                .progress-bar {
+                                                                                                                                                                                                    width: 100%;
+                                                                                                                                                                                                    height: 8px;
+                                                                                                                                                                                                    background: #faedcd;
+                                                                                                                                                                                                    border-radius: 10px;
+                                                                                                                                                                                                    overflow: hidden;
+                                                                                                                                                                                                }
+                                                                                                
+                                                                                                                                                                                                .progress {
+                                                                                                                                                                                                    height: 100%;
+                                                                                                                                                                                                    background: linear-gradient(90deg, #d4a373, #b08968);
+                                                                                                                                                                                                    border-radius: 10px;
+                                                                                                                                                                                                    transition: width 0.5s ease;
+                                                                                                                                                                                                }
